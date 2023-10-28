@@ -101,6 +101,142 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+## Punto 4 - SUMATORIAS DE ******
+
+### Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. nota: use math para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Calcule con cuántos términos de la serie (i.e: cuáles valores de n), se tienen errores del 10%, 1%, 0.1% y 0.001%.
+
+Para este punto importamos expoencial y factorial de la libreria math, establecimos la función con la variable numero como flotante y n como entero. Una variable dentro de la función llamada suma = 0, que usaremos para el ciclo for, minetras la variable i este entre 0 y (n +1) usamos la serie de Maclaurin que se ira sumando porgresivamente a la variable suma hasta que deje de cumplirse el ciclo.
+
+Luego le damos valor a las variables necesarias, y sacamos el valor real al elevar el número a cierto exponente, y establecimos un ciclo while que determine cuando el margen de error es inferior al 0.1%, ese sera el nuevo valor de n que utliziremos, corriendo nuevamente la función, dandonos el valor aproximado y el real.
+
+En esta primera es la función en la que no buscamos que el margen de error sea menor a 0.1%, el usuaario tiene la libertad de elegir el número n, considerando que el margen de error
+
+```
+import math
+
+def cos_approx_TaylorSwift(x, n):
+    # Variable para almacenar el resultado
+    resultado = 0
+
+    # Sumamos los términos de la serie de Taylor
+    for i in range(n):
+        resultado += ((-1) ** i) * (x ** (2 * i)) / math.factorial(2 * i)
+
+    # Devolvemos el resultado
+    return resultado
+
+
+x = float(input("Ingrese el valor de x: "))
+n = int(input("Ingrese el número de términos de la serie: "))
+
+# Calculamos la aproximación y mostramos la diferencia entre el valor real y la aproximación
+cos_x = math.cos(x)
+cos_approx = cos_approx_TaylorSwift(x, n)
+print(f"El valor real de cos({x}) es: {cos_x}")
+print(f"La aproximación de cos({x}) usando {n} términos de la serie es: {cos_approx}")
+print(f"La diferencia entre el valor real y la aproximación es: {abs(cos_x - cos_approx)}")
+```
+En esta si buscamos encontrar el valor en el que el margen de error sea 0.001%
+
+```
+import math
+
+def aprox_exp(numero: float, n: int)-> float:
+  suma: float = 0
+  for i in range(0, n+1):
+    n_ter = ((-1) ** i) * (x ** (2 * i)) / math.factorial(2 * i)
+    suma += n_ter
+  return suma
+
+if __name__ == "__main__":
+  numero = float(input("Ingresa un número real "))
+  n: int = 1
+  aprx: float = aprox_exp(numero, n)
+  v_real : float = math.cos(x)
+
+while((abs(v_real - aprx)/v_real * 100)>0.001):
+  aprx: float = aprox_exp(numero, n)
+  n += 1
+print("Para que el margen de error sea 0.001  el valor debe ser:" +str(n))
+print("La aproximación es " +str(aprx))
+print("El valor real es " +str(v_real))
+```
+En esta si buscamos encontrar el valor en el que el margen de error sea 0.1%
+
+```
+import math
+
+def aprox_exp(numero: float, n: int)-> float:
+  suma: float = 0
+  for i in range(0, n+1):
+    n_ter = ((-1) ** i) * (x ** (2 * i)) / math.factorial(2 * i)
+    suma += n_ter
+  return suma
+
+if __name__ == "__main__":
+  numero = float(input("Ingresa un número real "))
+  n: int = 1
+  aprx: float = aprox_exp(numero, n)
+  v_real : float = math.cos(x)
+
+while((abs(v_real - aprx)/v_real * 100)>0.1):
+  aprx: float = aprox_exp(numero, n)
+  n += 1
+print("Para que el margen de error sea 0.1  el valor debe ser:" +str(n))
+print("La aproximación es " +str(aprx))
+print("El valor real es " +str(v_real))
+```
+En esta si buscamos encontrar el valor en el que el margen de error sea 1%
+
+```
+import math
+
+def aprox_exp(numero: float, n: int)-> float:
+  suma: float = 0
+  for i in range(0, n+1):
+    n_ter = ((-1) ** i) * (x ** (2 * i)) / math.factorial(2 * i)
+    suma += n_ter
+  return suma
+
+if __name__ == "__main__":
+  numero = float(input("Ingresa un número real "))
+  n: int = 1
+  aprx: float = aprox_exp(numero, n)
+  v_real : float = math.cos(x)
+
+while((abs(v_real - aprx)/v_real * 100)>1):
+  aprx: float = aprox_exp(numero, n)
+  n += 1
+print("Para que el margen de error sea 1  el valor debe ser:" +str(n))
+print("La aproximación es " +str(aprx))
+print("El valor real es " +str(v_real))
+```
+
+En esta si buscamos encontrar el valor en el que el margen de error sea 10%
+
+```
+import math
+
+def aprox_exp(numero: float, n: int)-> float:
+  suma: float = 0
+  for i in range(0, n+1):
+    n_ter = ((-1) ** i) * (x ** (2 * i)) / math.factorial(2 * i)
+    suma += n_ter
+  return suma
+
+if __name__ == "__main__":
+  numero = float(input("Ingresa un número real "))
+  n: int = 1
+  aprx: float = aprox_exp(numero, n)
+  v_real : float = math.cos(x)
+
+while((abs(v_real - aprx)/v_real * 100)>10):
+  aprx: float = aprox_exp(numero, n)
+  n += 1
+print("Para que el margen de error sea 10%  el valor debe ser:" +str(n))
+print("La aproximación es " +str(aprx))
+print("El valor real es " +str(v_real))
+```
 
 ## Punto 5 - ¿Cúall es tu addición con la matemática?
 
