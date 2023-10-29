@@ -7,7 +7,7 @@ Miguel Angel Acevedo Olaya, Alias: Mickey
 
 ## LOGO:
 
-![LOGO](LOGO.png)
+[![Hanonimus-con-H.png](https://i.postimg.cc/zvK2hP3Y/Hanonimus-con-H.png)](https://postimg.cc/T52cM0rt)
 
 ## PUNTO 1 - LAS MATEMATICAS COMO LA BASE DE TODO
 
